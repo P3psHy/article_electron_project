@@ -35,28 +35,32 @@ onMounted(async () => {
         router.push('/authentification');
         return;
     }
-
-    try {
-        const res_api = await fetch(
-            'http://127.0.0.1:3000/articles/',
-            {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`
+    else {
+        console.log("Token trouvé :", token);
+        try {
+            const res_api = await fetch(
+                'http://127.0.0.1:3000/articles/',
+                {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 }
+            );
+            const res_data = await res_api.json();
+            switch (res_data['code']) {
+                case '200':
+                    article_list.value = res_data['data'];
+                    break;
+                default:
+                    console.log("Erreur inconnue");
+                    break;
             }
-        );
-        const res_data = await res_api.json();
-        switch (res_data['code']) {
-            case '200':
-                article_list.value = res_data['data'];
-                break;
-            default:
-                console.log("Erreur inconnue");
-                break;
+        } catch (error) {
+            console.log("Erreur lors de la récupération des articles", error);
         }
-    } catch (error) {
-        console.log("Erreur lors de la récupération des articles", error);
+        
     }
 });
+
 </script>

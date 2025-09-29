@@ -1,5 +1,5 @@
 {
-  "name": "app_demo",
+  "name": "app_article_electron",
   "version": "1.0.0",
   "description": "test",
   "main": ".vite/build/main.js",
