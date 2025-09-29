@@ -1,6 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import PageOne from '../views/PageOne.vue';
-import PageTwo from '../views/PageTwo.vue';
 
 import authentification_page from '../views/authentification_page.vue';
 
