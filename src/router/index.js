@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 import authentification_page from '../views/authentification_page.vue';
+import inscription_page from '../views/inscription_page.vue';
 
 import dashboard from '../views/dashboard.vue';
 import detail_article_page from '../views/detail_article.vue';
@@ -12,8 +13,8 @@ const routes = [
     { path: '/', name: 'Dashboard', component: dashboard },
 
     { path: '/authentification', name:'Authentification', component: authentification_page },
-    { path: '/inscription', name: 'Inscription',},
-    
+    { path: '/inscription', name: 'Inscription', component: inscription_page},
+
     { path: '/article/:id', name: 'DetailArticle', component: detail_article_page },
     { path: '/article/:id/edit', name:'EditArticle', },
     { path: '/article/:id/delete', name: 'DeleteArticle', }
