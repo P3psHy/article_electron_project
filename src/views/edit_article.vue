@@ -38,7 +38,6 @@ onMounted(async () => {
         return;
     }
     else {
-        console.log("Token trouvé :", token);
         try {
             const res_api = await fetch(
                 `http://127.0.0.1:3000/articles/${id}`,
@@ -95,7 +94,6 @@ async function edit_article() {
         const res_data = await res_api.json();
         switch (res_data['code']) {
             case '200':
-                console.log("Article modifié avec succès");
                 router.push('/');
                 break;
             default:

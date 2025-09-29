@@ -1,7 +1,7 @@
 {
   "name": "app_article_electron",
   "version": "1.0.0",
-  "description": "test",
+  "description": "Aplication de gestion d'articles avec ElectronJS",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -32,5 +32,9 @@
     "electron-squirrel-startup": "^1.0.1",
     "vue": "^3.5.22",
     "vue-router": "^4.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/P3psHy/article_electron_project/"
   }
 }

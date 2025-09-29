@@ -93,7 +93,6 @@ async function signup_api() {
         );
 
         const res_data = await res.json()
-        console.log(res_data['code']);
         switch (res_data['code']) {
             case '713':
                 showError.value = true;

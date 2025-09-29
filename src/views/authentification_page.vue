@@ -60,7 +60,6 @@ async function auth_api() {
             
             case '200':
                 showError.value = false;
-                console.log("Authentification réussie");
 
                 localStorage.setItem('token', res_data['data']);
                 

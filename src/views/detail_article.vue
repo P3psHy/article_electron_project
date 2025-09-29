@@ -16,10 +16,10 @@
                 class="uk-button uk-button-warning uk-margin-small-right"
                 :to="`/article/${article['id']}/edit`"
             >Modifier</router-link>
-            <router-link
+            <button
                 class="uk-button uk-button-danger"
-                :to="`/article/${article['id']}/delete`"
-            >Supprimer</router-link>
+                @click="delete_article(article['id'])"
+            >Supprimer</button>
         </div>
 </template>
 
@@ -40,7 +40,6 @@ onMounted(async () => {
         return;
     }
     else {
-        console.log("Token trouvé :", token);
         try {
             const res_api = await fetch(
                 `http://127.0.0.1:3000/articles/${id}`,
@@ -66,5 +65,25 @@ onMounted(async () => {
         
     }
 });
+
+async function delete_article(id) {
+    const token = localStorage.getItem('token');
+
+    console.log("Lancement de la suppression");
+    if (confirm("Voulez-vous vraiment supprimer cet article ?")) {
+        try {
+            await fetch(`http://127.0.0.1:3000/articles/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            // Actualise la liste après suppression
+        } catch (error) {
+            console.log("Erreur lors de la suppression", error);
+        }
+    }
+    router.push('/');
+}
 
 </script>
