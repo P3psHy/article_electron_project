@@ -71,22 +71,6 @@ async function signup_api() {
     zip_code.value = document.getElementById('zip_code').value;
     city.value = document.getElementById('city').value;
     phone.value = document.getElementById('phone').value;
-    
-
-    log.info('Appel de l\'API pour authentification');
-
-        const payload = {
-        email: email.value,
-        password: password.value,
-        passwordConfirm: confirm_password.value,
-        pseudo: pseudo.value,
-        cityCode: zip_code.value,
-        city: city.value,
-        phone: phone.value
-    };
-
-    console.log("Valeur envoyée à l'API :", payload);
-
 
     try {
         const res = await fetch(

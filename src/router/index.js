@@ -5,7 +5,7 @@ import inscription_page from '../views/inscription_page.vue';
 
 import dashboard from '../views/dashboard.vue';
 import detail_article_page from '../views/detail_article.vue';
-// import edit_article from '../views/edit_article.vue';
+import edit_article from '../views/edit_article.vue';
 // import create_article from '../views/create_article.vue';
 
 const routes = [
@@ -16,7 +16,7 @@ const routes = [
     { path: '/inscription', name: 'Inscription', component: inscription_page},
 
     { path: '/article/:id', name: 'DetailArticle', component: detail_article_page },
-    { path: '/article/:id/edit', name:'EditArticle', },
+    { path: '/article/:id/edit', name:'EditArticle', component: edit_article },
     { path: '/article/:id/delete', name: 'DeleteArticle', }
 
 
