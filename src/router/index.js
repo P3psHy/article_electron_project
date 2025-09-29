@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import authentification_page from '../views/authentification_page.vue';
 
 import dashboard from '../views/dashboard.vue';
-// import detail_article from '../views/detail_article.vue';
+import detail_article_page from '../views/detail_article.vue';
 // import edit_article from '../views/edit_article.vue';
 // import create_article from '../views/create_article.vue';
 
@@ -14,7 +14,7 @@ const routes = [
     { path: '/authentification', name:'Authentification', component: authentification_page },
     { path: '/inscription', name: 'Inscription',},
     
-    { path: '/article/:id', name: 'DetailArticle', },
+    { path: '/article/:id', name: 'DetailArticle', component: detail_article_page },
     { path: '/article/:id/edit', name:'EditArticle', },
     { path: '/article/:id/delete', name: 'DeleteArticle', }
 
