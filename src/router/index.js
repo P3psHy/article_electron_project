@@ -14,9 +14,9 @@ const routes = [
     { path: '/authentification', name:'Authentification', component: authentification_page },
     { path: '/inscription', name: 'Inscription',},
     
-    { path: '/detail-article', name: 'DetailArticle', },
-    { path: '/edit-article', name:'EditArticle', },
-    { path: '/create-article', name: 'CreateArticle', }
+    { path: '/article/:id', name: 'DetailArticle', },
+    { path: '/article/:id/edit', name:'EditArticle', },
+    { path: '/article/:id/delete', name: 'DeleteArticle', }
 
 
 ];
