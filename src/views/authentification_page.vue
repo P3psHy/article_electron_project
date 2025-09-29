@@ -61,9 +61,8 @@ async function auth_api() {
             case '200':
                 showError.value = false;
                 console.log("Authentification réussie");
-                console.log(res_data['data'])
 
-                localStorage.setItem('token', res_data['data'].token);
+                localStorage.setItem('token', res_data['data']);
                 
                 router.push('/');
                 
